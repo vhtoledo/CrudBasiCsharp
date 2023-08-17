@@ -1,0 +1,11 @@
+C:\Cursos\C#\CRUDBASIC\CRUDBASIC\bin\Debug\CRUDBASIC.exe.config
+C:\Cursos\C#\CRUDBASIC\CRUDBASIC\bin\Debug\CRUDBASIC.exe
+C:\Cursos\C#\CRUDBASIC\CRUDBASIC\bin\Debug\CRUDBASIC.pdb
+C:\Cursos\C#\CRUDBASIC\CRUDBASIC\obj\Debug\CRUDBASIC.csproj.AssemblyReference.cache
+C:\Cursos\C#\CRUDBASIC\CRUDBASIC\obj\Debug\CRUDBASIC.csproj.SuggestedBindingRedirects.cache
+C:\Cursos\C#\CRUDBASIC\CRUDBASIC\obj\Debug\CRUDBASIC.Form1.resources
+C:\Cursos\C#\CRUDBASIC\CRUDBASIC\obj\Debug\CRUDBASIC.Properties.Resources.resources
+C:\Cursos\C#\CRUDBASIC\CRUDBASIC\obj\Debug\CRUDBASIC.csproj.GenerateResource.cache
+C:\Cursos\C#\CRUDBASIC\CRUDBASIC\obj\Debug\CRUDBASIC.csproj.CoreCompileInputs.cache
+C:\Cursos\C#\CRUDBASIC\CRUDBASIC\obj\Debug\CRUDBASIC.exe
+C:\Cursos\C#\CRUDBASIC\CRUDBASIC\obj\Debug\CRUDBASIC.pdb
