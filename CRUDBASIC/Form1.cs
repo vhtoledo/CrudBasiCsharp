@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CRUDBASIC
 {
@@ -61,6 +62,33 @@ namespace CRUDBASIC
 
             dataGridView1.DataSource = Consulta();
 
+        }
+
+        // Metodo actualizar registro
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BD.Conexion();
+            string update = "UPDATE Empleados SET codigo=@codigo, nombre=@nombre, apellido=@apellido, direccion=@direccion WHERE codigo=@codigo";
+            SqlCommand actualizar = new SqlCommand(update, BD.Conexion());
+            actualizar.Parameters.AddWithValue("@codigo", textCodigo.Text);
+            actualizar.Parameters.AddWithValue("@nombre", textNombre.Text);
+            actualizar.Parameters.AddWithValue("@apellido", textApellido.Text);
+            actualizar.Parameters.AddWithValue("@direccion", textDireccion.Text);
+
+            actualizar.ExecuteNonQuery();
+
+            MessageBox.Show("Actualización correctamente");
+
+            dataGridView1.DataSource = Consulta();
+        }
+
+        // Metodo para recuperar datos en las posiciones
+        void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textCodigo.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            textNombre.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            textApellido.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            textDireccion.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
         }
     }
 }
