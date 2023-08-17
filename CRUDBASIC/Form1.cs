@@ -90,5 +90,25 @@ namespace CRUDBASIC
             textApellido.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             textDireccion.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            BD.Conexion();
+            string delete = "DELETE FROM Empleados WHERE codigo=@codigo";
+            SqlCommand eliminar = new SqlCommand(delete, BD.Conexion());
+            eliminar.Parameters.AddWithValue("@codigo", textCodigo.Text);
+            eliminar.ExecuteNonQuery();
+            MessageBox.Show("El empleado se eliminó correctamente");
+            dataGridView1.DataSource = Consulta();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textCodigo.Clear();
+            textNombre.Clear();
+            textApellido.Clear();
+            textDireccion.Clear();
+            textNombre.Focus();
+        }
     }
 }
