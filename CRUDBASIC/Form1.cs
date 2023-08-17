@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CRUDBASIC
 {
@@ -27,6 +28,20 @@ namespace CRUDBASIC
             // Sincronizar conexión BD
             BD.Conexion();
             MessageBox.Show("Conectado");
+
+            dataGridView1.DataSource = Consulta();
+
+        }
+        // Crear subprogram de consulta
+        public DataTable Consulta()
+        {
+            BD.Conexion();
+            DataTable datos = new DataTable();
+            string consultar = "SELECT * FROM Empleados";
+            SqlCommand cmd = new SqlCommand(consultar, BD.Conexion());
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(datos);
+            return datos;
         }
     }
 }
