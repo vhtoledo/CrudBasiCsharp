@@ -32,7 +32,7 @@ namespace CRUDBASIC
             dataGridView1.DataSource = Consulta();
 
         }
-        // Crear subprogram de consulta
+        // Crear metodo de consulta
         public DataTable Consulta()
         {
             BD.Conexion();
@@ -42,6 +42,25 @@ namespace CRUDBASIC
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(datos);
             return datos;
+        }
+        
+        // Crear metodo de registro
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BD.Conexion();
+            string insertar = "INSERT INTO Empleados(codigo,nombre,apellido,direccion) VALUES (@codigo,@nombre,@apellido,@direccion)";
+            SqlCommand insert = new SqlCommand(insertar,BD.Conexion());
+            insert.Parameters.AddWithValue("@codigo", textCodigo.Text);
+            insert.Parameters.AddWithValue("@nombre", textNombre.Text);
+            insert.Parameters.AddWithValue("@apellido", textApellido.Text);
+            insert.Parameters.AddWithValue("@direccion", textDireccion.Text);
+
+            insert.ExecuteNonQuery();
+
+            MessageBox.Show("Empleado registrado");
+
+            dataGridView1.DataSource = Consulta();
+
         }
     }
 }
